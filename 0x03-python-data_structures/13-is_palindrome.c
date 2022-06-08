@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -64,6 +63,7 @@ int is_palindrome(listint_t **head)
 			tmp = tmp->next;
 		}
 		res = _chunk_ispal(array_of_list, 0, n - 1);
+		free(array_of_list);
 	}
 		return (res);
 }
