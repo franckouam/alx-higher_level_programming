@@ -56,14 +56,14 @@ int is_palindrome(listint_t **head)
 	if (head && *head)
 	{
 		n = list_len(*head);
-		array_of_list = malloc(n * sizeof(listint_t*));
+		array_of_list = malloc(n * sizeof(listint_t *));
 		tmp = *head;
-		while(tmp)
+		while (tmp)
 		{
 			array_of_list[i++] = tmp;
 			tmp = tmp->next;
 		}
-		res = _chunk_ispal(array_of_list, 0, n-1);
+		res = _chunk_ispal(array_of_list, 0, n - 1);
 	}
 		return (res);
 }
