@@ -1,6 +1,26 @@
 #!/usr/bin/python3
+"""Square module definition.
+
+This module defines a simple `Square` class
+"""
+
+
 class Square:
+    """A simple ``Square`` class
+
+    Attributes:
+        size (`int`): The size of the ``Square``.
+    """
     def __init__(self, size=0, position=(0, 0)):
+        """Constructs a ``Square`` objet
+        Args:
+            size (`int`): The size of the ``Square``.
+                The default value is 0.
+
+        Raises:
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
+        """
         self.size = size
         self.position = position
 
@@ -14,10 +34,23 @@ class Square:
         return res
 
     def area(self):
+        """Computes the area of the ``Square``.
+        Returns:
+            int: The area of the ``Square``.
+        """
         return self.size ** 2
 
     @property
     def size(self):
+        """ 
+        Args:
+            size (`int`): The size of the ``Square``.
+                The default value is 0.
+
+        Raises:
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
+        """
         return self._Square__size
 
     @size.setter
@@ -31,6 +64,14 @@ class Square:
 
     @property
     def position(self):
+        """ 
+        Args:
+            position (:obj: `tuple` of `int`): The position to start to
+                print the ``Square``.
+
+        Raises:
+            TypeError: If ``position`` is not a tuple of 2 integers
+        """
         return self._Square__position
 
     @position.setter
@@ -41,4 +82,5 @@ class Square:
             self._Square__position = position
 
     def my_print(self):
+        """Prints a ``Square`` filled with '#'"""
         print(self)
