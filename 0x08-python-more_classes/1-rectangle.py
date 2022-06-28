@@ -17,7 +17,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ 
+        """
         Args:
             height (`int`): The height of the ``Rectangle``
         Raises:
@@ -54,4 +54,3 @@ class Rectangle:
             raise ValueError("width must be >=0")
         else:
             self._Rectangle__width = width
-

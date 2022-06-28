@@ -17,7 +17,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ 
+        """
         Args:
             height (`int`): The height of the ``Rectangle``
         Raises:
@@ -31,7 +31,7 @@ class Rectangle:
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         elif height < 0:
-            raise ValueError("height must be >=0")
+            raise ValueError("height must be >= 0")
         else:
             self._Rectangle__height = height
 
@@ -51,7 +51,7 @@ class Rectangle:
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
-            raise ValueError("width must be >=0")
+            raise ValueError("width must be >= 0")
         else:
             self._Rectangle__width = width
 
@@ -61,4 +61,6 @@ class Rectangle:
 
     def perimeter(self):
         """Computes the ``perimeter`` of the ``Rectangle``"""
+        if self.width == 0 or self.height == 0:
+            return 0
         return 2 * (self.width + self.height)
