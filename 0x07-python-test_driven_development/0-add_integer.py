@@ -7,10 +7,10 @@ Simple integers ``addition`` module.
 
 def add_integer(a, b=98):
     """Calculate the sum of ``a`` and ``b``
-    
+
     Args:
         a: The first parameter
-	b: The second parameter
+        b: The second parameter
     Raises:
         TypeError: If a or b is neither integer nor float.
     Notes:
