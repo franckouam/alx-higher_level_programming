@@ -29,3 +29,14 @@ TypeError: a must be an integer
 Traceback (most recent call last):
    ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(float('inf'), 5)
+89
+>>> add_integer(5, float('inf'))
+89
+>>> add_integer(None, 5)
+>>> Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(5, None)
+    ...
+TypeError: b must be an integer
