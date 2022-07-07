@@ -1,4 +1,7 @@
-"""The lookup module
+#!/usr/bin/python3
+
+"""
+The lookup module
 """
 
 
