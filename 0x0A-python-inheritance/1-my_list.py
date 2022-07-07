@@ -11,5 +11,6 @@ class MyList(list):
         super(list).__init__(*args, **kwargs)
 
     def print_sorted(self):
-        self.sort()
+        self
+        super(list).sort()
         print(self)
