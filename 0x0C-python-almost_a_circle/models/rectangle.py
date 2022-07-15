@@ -28,6 +28,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
+        self._validate_or_raise(width, 'width')
         self.__width = width
 
     @property
@@ -36,6 +37,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
+        self._validate_or_raise(height, 'height')
         self.__height = height
 
     @property
@@ -44,6 +46,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
+        self._validate_or_raise(x, 'x')
         self.__x = x
 
     @property
@@ -52,4 +55,33 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
+        self._validate_or_raise(y, 'y')
         self.__y = y
+
+    def _validate_or_raise(self, attr, name):
+        if type(attr) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if name in ['width', 'height']:
+            if attr <= 0:
+                raise ValueError("{} must be > 0".format(name))
+        if name in ['x', 'y']:
+            if attr < 0:
+                raise ValueError("{} must be >= 0".format(name))
+
+    def area(self):
+        """Compute the `Rectangle` area"""
+        return self.width * self.height
+
+    def display(self):
+        res = ""
+        for i in range(self.height):
+            for __ in range(self.width):
+                res += '#'
+            if i < self.height - 1:
+                res += "\n"
+        print(res)
+
+    def __str__(self):
+        res = f"[Rectangle] ({self.id}) {self.x}/{self.y} "
+        res += f"- {self.width}/{self.height}"
+        return res
