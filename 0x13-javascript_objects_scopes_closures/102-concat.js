@@ -8,5 +8,5 @@ const fileRes = process.argv[4];
 try {
   const data1 = fs.readFileSync(file1, 'utf-8');
   const data2 = fs.readFileSync(file2, 'utf-8');
-  fs.writeFile(fileRes, data1 + data2, (err) => { console.log(err); });
-} catch (err) { console.log(err); }
+  fs.writeFile(fileRes, data1 + data2, (err) => {});
+} catch (err) {}
