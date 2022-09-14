@@ -8,11 +8,12 @@ if __name__=='__main__':
     db_name = sys.argv[3]
     print(username, password, db_name)
     db = MySQLdb.connect(host='127.0.0.1',
+		    port=3306,
 		    user=username,
 		    passwd=password,
 		    db=db_name)
     cur = db.cursor()
-    cur.execute('SELECT * FROM states')
+    cur.execute('SELECT * FROM states ORDER BY id ASC')
     rows = cur.fetchall()
     for row in rows:
         print(row)
