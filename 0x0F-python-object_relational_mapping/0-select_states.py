@@ -2,6 +2,7 @@
 """
 This script lists all ``states`` from a given database.
 """
+
 import MySQLdb
 import sys
 
