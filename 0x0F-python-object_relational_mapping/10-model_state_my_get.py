@@ -12,7 +12,11 @@ if __name__ == '__main__':
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    state = session.query(State).order_by(State.id).first()
+    state = session.query(State).filter(
+                State.name.like("{}".format(
+                          sys.argv[4].replace("'", "''")))).first()
     if state:
-        print("{}: {}".format(state.id, state.name))
+        print(state.id)
+    else:
+        print("Not found")
     session.close()
