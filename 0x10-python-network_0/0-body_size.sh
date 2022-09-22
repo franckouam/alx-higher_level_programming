@@ -1,3 +1,3 @@
 #!/bin/bash
 # Curl body size
-curl -s -w "%{size_download}\n" $1
+curl -sI "$1" | grep "Content-Length" | cut -d " " -f2
