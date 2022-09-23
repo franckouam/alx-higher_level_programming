@@ -7,9 +7,8 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    try:
-        with requests.get(sys.argv[1]) as response:
-            print(response.text)
-    except requests.HTTPError as e:
-	    if response.status_code >= 400:
+    with requests.get(sys.argv[1]) as response:
+        if response.status_code >= 400:
             print("Error code: {}".format(response.status_code))
+        else:
+            print(response.text)
