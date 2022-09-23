@@ -16,7 +16,8 @@ if __name__ == '__main__':
         try:
             j = response.json()
             if j:
-                print("[{}] {}".format(j.get('id'), j.get('name')))
+                for key, value in j.items():
+                    print("[{}] {}".format(key, value))
             else:
                 print('No result')
         except requests.exceptions.JSONDecodeError:
