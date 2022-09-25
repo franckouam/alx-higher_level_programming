@@ -13,6 +13,6 @@ if __name__ == '__main__':
     Session.configure(bind=engine)
     session = Session()
     for state in session.query(State).filter(State.name.like('%a%')):
-        state.delete()
+        session.delete(state)
     session.commit()
     session.close()
