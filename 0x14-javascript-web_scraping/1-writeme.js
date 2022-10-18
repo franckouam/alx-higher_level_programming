@@ -2,10 +2,12 @@
 
 const fs = require('fs');
 const file = process.argv[2];
+const str = process.argv[3];
 
 try {
-  const data = fs.readFileSync(file, 'utf-8');
-  console.log(`${data}`);
+  fs.writeFile(file, str, (err) => {
+    console.log(err);
+  });
 } catch (err) {
-  console.log(`${err}`)
+  console.log(`${err}`);
 }
