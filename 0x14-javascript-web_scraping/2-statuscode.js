@@ -5,8 +5,11 @@ const url = process.argv[2];
 
 try {
   request(url, function (error, response, body) {
-    console.error('error:', error);
-    console.log('code:', response && response.statusCode);
+    if (error) {
+      console.error('error:', error);
+    } else {
+      console.log('code:', response && response.statusCode);
+    }
   });
 } catch (err) {
   console.log(`${err}`);
