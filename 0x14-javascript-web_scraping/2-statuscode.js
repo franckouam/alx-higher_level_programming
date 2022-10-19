@@ -4,7 +4,8 @@ const request = require('request');
 const url = process.argv[2];
 
 try {
-  request(url, function(error, response, body) {
+  request(url, function (error, response, body) {
+    console.error('error:', error);
     console.log('code:', response && response.statusCode);
   });
 } catch (err) {
